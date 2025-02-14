@@ -552,6 +552,7 @@ class Context:
             User(state=self.bot.state, data=g)
             for g in data.get("channel", {}).get("recipients", [])
         ]
+        self.locale: str = data.get("locale", "ko") # JETTBOT edit: add locale property
 
         # Should not be used, but if you *really* want the raw data, here it is
         self._data: dict = data
